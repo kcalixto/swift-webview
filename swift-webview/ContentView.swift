@@ -7,11 +7,11 @@
 
 import SwiftUI
 import WebKit
+import Foundation
 
 struct ContentView: View {
     @State private var showWebView = false
-    private let urlString: String = "https://google.com"
-    
+    private let urlString: String = ProcessInfo.processInfo.environment["URL"] ?? "https://google.com";
     var body: some View {
         GeometryReader {
             geometry in
